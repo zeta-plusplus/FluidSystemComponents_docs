@@ -1,0 +1,137 @@
+<html>
+<head>
+	<style type="text/css">
+		h3
+		{
+			line-height: 1em;
+			margin: 0.5em 0px;
+		}
+		
+		h4
+		{
+			line-height: 1em;
+			margin: 0.5em 0px;
+		}
+		
+		p
+		{
+			padding-left: 1em;
+			text-indent: 2em;
+			line-height: 1em;
+			margin: 0em 0px;
+		}
+		
+		p1
+		{
+			padding-left: 2em;
+			text-indent: 4em;
+			line-height: 1em;
+			margin: 0em 0px;
+		}
+		
+		ul
+		{
+			margin: 0em 0px;
+		}
+		
+		li
+		{
+			text-indent: 2em;
+			line-height: 1em;
+			margin: 0em 0px;
+		}
+		
+	</style>
+</head>
+
+<body>
+	<h3>HX_modulatedEff00 </h3>
+	icon:<br>
+	<img src="HX_modulatedEff00_icon.jpg">
+	<p> &emsp; </p>
+		<p>Simplest heat exhchanger model which transfers heat from one fluid flow to another. Sum of heat and enthalpy is conserved. </p>
+		<p> &emsp; </p>
+	
+	<h4>Scope/Calculation function </h4>
+		<ul>
+		<li>estimation of change of fluid states (enthalpy, temperature, internal energy) with given HX effectiveness.</li>
+		<li>rough heat exchanger sizing/scaling if combinated with NTU-effectiveness equation outside of this component. </li>
+		</ul>
+		<p> &emsp; </p>
+	
+	<h4>Short description of physical model/calculation method</h4>
+		<ul>
+		<li>calculates maximum potential heat to be exchanged (Q_flow_max) from heat capacities of inlets. </li>
+		<li>calculates actual heat exchanged from maxmum potential heat exchanged and given effectiveness.</li>
+		<li>outlet states of fluids are calculated by heat conservation equations.</li>
+		<li>either of Medium 1 or 2 can be hot/cold side. Which side is hot/cold is determined automatically.</li>
+		<li>either of port 1 or 2 can be inlet/outlet side. Which side is inlet/outlet is determined automatically. </li>
+		</ul>
+		<img src= "HX_modulatedEff00_internal.jpg">
+		<p> &emsp; </p>
+		
+	<h4>Limitations/Assumptions of model</h4>	
+		<ul>
+		<li>heat capacities are calculated referring to only INLET state. Maximum potential heat exchanged is NOT true if specific heat capacity varies over temerature or if phase change is included. (same definition of maximum potential heat exchanged as ordinary heat transfer textbook) </li>
+		<li>heat leak is NOT taken into account. </li>
+		<li>heat soak, or thermal mass, is NOT taken into account. </li>
+		<li>heat conduction of wall is NOT taken into account. </li>
+		<li>volume effect, or time delay in mass and enthalpy flow, is NOT taken into account. </li>
+		<li>2 fluids never mix. </li>
+		<li>pressure loss does NOT occur. </li>
+		</ul>
+		<p> &emsp; </p>
+		
+	<h4>Interface </h4>
+		<img src= "HX_modulatedEff00_IF.jpg">
+		<p> &emsp; </p>
+	
+	<h4>Parameters </h4>
+		<p>NONE. </p>
+		<p> &emsp; </p>
+		
+	<h4>Usage </h4>
+		<ul>
+		<li> redeclear the package of medium 1 and 2 </li>
+		<li>fill following connectors: </li>
+			<ul>
+			<li>port_1_med1 </li>
+			<li>port_2_med1 </li>
+			<li>port_1_med2 </li>
+			<li>port_2_med2 </li>
+			<li>u_eff </li>
+			</ul>
+		</ul>
+		<p> &emsp; </p>
+	
+	<h4>Warning/Causions </h4>
+		<p>None</p>
+		<p> &emsp; </p>
+		
+	<h4>Demo models</h4>
+		<li>FluidSystemComponents.HeatTransfer.Examples.test.HX_modulatedEff00_test01</li>
+		<img src= "ex_HX_modulatedEff00_test01.jpg">
+		<p> &emsp; </p>
+		<p> &emsp; </p>
+		<li>FluidSystemComponents.HeatTransfer.Examples.test.HX_modulatedEff00_test02</li>
+		<img src= "ex_HX_modulatedEff00_test02.jpg">
+		<p> &emsp; </p>
+		<p> &emsp; </p>
+		<li>FluidSystemComponents.HeatTransfer.Examples.test.HX_modulatedEff00_test03</li>
+		<img src= "ex_HX_modulatedEff00_test03.jpg">
+		<p> &emsp; </p>
+		<p> &emsp; </p>
+		<li>FluidSystemComponents.HeatTransfer.Examples.test.HX_modulatedEff00_test04</li>
+		<img src= "ex_HX_modulatedEff00_test04.jpg">
+		<p> &emsp; </p>
+		<p> &emsp; </p>
+	
+	<h4>Equations in details </h4>
+		<p> ***** under construction ***** </p>
+		<p> &emsp; </p>
+	
+	<a href="../../../index.html">Back to index page </a>
+	<p> &emsp; </p>
+	
+</body>
+</html>
